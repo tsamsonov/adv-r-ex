@@ -49,8 +49,13 @@ is.array(tab)
 dim(tab)
 dimnames(tab)
 ```
-```{r}
 
+When levels are reversed, the values are reversed too
+```{r}
+fac = factor(letters)
+fac
+levels(fac) = rev(levels(fac))
+fac
 ```
 
 
