@@ -50,13 +50,56 @@ dim(tab)
 dimnames(tab)
 ```
 
-When levels are reversed, the values are reversed too
+When levels are changed, the values are changed appropriately
 ```{r}
 fac = factor(letters)
 fac
 levels(fac) = rev(levels(fac))
 fac
+
+fac = factor(1:10)
+fac
+levels(fac) = rev(levels(fac))
+fac
+
+rev(factor(1:10))
+factor(letters, levels = rev(letters))
 ```
+```{r}
+ll = list('a', 15, FALSE)
+is.vector(ll)
+as.vector(ll)
+unlist(ll)
+```
+
+Zero-sized DF
+```{r}
+a = data.frame()
+a
+dim(a)
+```
+Non-unique row names are not allowed
+```{r, error=TRUE}
+a = data.frame(num = 1:3, log = c(TRUE, TRUE, FALSE), chr = c('a','b','c'))
+row.names(a) = c(1,1,1)
+```
+
+Data type is coerced to a common type
+```{r}
+t(a)
+t(a[1:2])
+```
+
+data.matrix coerces to numeric:
+```{r}
+as.matrix(a)
+data.matrix(a)
+```
+
+
+
+
+
 
 
 

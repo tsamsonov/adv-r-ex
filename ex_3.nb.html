@@ -1869,7 +1869,7 @@ $b
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>When levels are reversed, the values are reversed too</p>
+<p>When levels are changed, the values are changed appropriately</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZmFjID0gZmFjdG9yKGxldHRlcnMpXG5mYWNcbmBgYCJ9 -->
@@ -1888,11 +1888,149 @@ fac</code></pre>
 <pre><code> [1] z y x w v u t s r q p o n m l k j i h g f e d c b a
 Levels: z y x w v u t s r q p o n m l k j i h g f e d c b a</code></pre>
 <!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZmFjID0gZmFjdG9yKDE6MTApXG5mYWNcbmBgYCJ9 -->
+<pre class="r"><code>fac = factor(1:10)
+fac</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSAxICAyICAzICA0ICA1ICA2ICA3ICA4ICA5ICAxMFxuTGV2ZWxzOiAxIDIgMyA0IDUgNiA3IDggOSAxMFxuIn0= -->
+<pre><code> [1] 1  2  3  4  5  6  7  8  9  10
+Levels: 1 2 3 4 5 6 7 8 9 10</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGV2ZWxzKGZhYykgPSByZXYobGV2ZWxzKGZhYykpXG5mYWNcbmBgYCJ9 -->
+<pre class="r"><code>levels(fac) = rev(levels(fac))
+fac</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSAxMCA5ICA4ICA3ICA2ICA1ICA0ICAzICAyICAxIFxuTGV2ZWxzOiAxMCA5IDggNyA2IDUgNCAzIDIgMVxuIn0= -->
+<pre><code> [1] 10 9  8  7  6  5  4  3  2  1 
+Levels: 10 9 8 7 6 5 4 3 2 1</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmV2KGZhY3RvcigxOjEwKSlcbmBgYCJ9 -->
+<pre class="r"><code>rev(factor(1:10))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSAxMCA5ICA4ICA3ICA2ICA1ICA0ICAzICAyICAxIFxuTGV2ZWxzOiAxIDIgMyA0IDUgNiA3IDggOSAxMFxuIn0= -->
+<pre><code> [1] 10 9  8  7  6  5  4  3  2  1 
+Levels: 1 2 3 4 5 6 7 8 9 10</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZmFjdG9yKGxldHRlcnMsIGxldmVscyA9IHJldihsZXR0ZXJzKSlcbmBgYCJ9 -->
+<pre class="r"><code>factor(letters, levels = rev(letters))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBhIGIgYyBkIGUgZiBnIGggaSBqIGsgbCBtIG4gbyBwIHEgciBzIHQgdSB2IHcgeCB5IHpcbkxldmVsczogeiB5IHggdyB2IHUgdCBzIHIgcSBwIG8gbiBtIGwgayBqIGkgaCBnIGYgZSBkIGMgYiBhXG4ifQ== -->
+<pre><code> [1] a b c d e f g h i j k l m n o p q r s t u v w x y z
+Levels: z y x w v u t s r q p o n m l k j i h g f e d c b a</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGwgPSBsaXN0KCdhJywgMTUsIEZBTFNFKVxuaXMudmVjdG9yKGxsKVxuYGBgIn0= -->
+<pre class="r"><code>ll = list(&#39;a&#39;, 15, FALSE)
+is.vector(ll)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFRSVUVcbiJ9 -->
+<pre><code>[1] TRUE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYXMudmVjdG9yKGxsKVxuYGBgIn0= -->
+<pre class="r"><code>as.vector(ll)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiW1sxXV1cblsxXSBcImFcIlxuXG5bWzJdXVxuWzFdIDE1XG5cbltbM11dXG5bMV0gRkFMU0VcbiJ9 -->
+<pre><code>[[1]]
+[1] &quot;a&quot;
+
+[[2]]
+[1] 15
+
+[[3]]
+[1] FALSE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudW5saXN0KGxsKVxuYGBgIn0= -->
+<pre class="r"><code>unlist(ll)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiYVwiICAgICBcIjE1XCIgICAgXCJGQUxTRVwiXG4ifQ== -->
+<pre><code>[1] &quot;a&quot;     &quot;15&quot;    &quot;FALSE&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Zero-sized DF</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYSA9IGRhdGEuZnJhbWUoKVxuYVxuYGBgIn0= -->
+<pre class="r"><code>a = data.frame()
+a</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6MCwibnJvdyI6MH0sInJkZiI6Ikg0c0lBQUFBQUFBQUEyMVBUUStDTUF3dEg4T3dCRVBpNzRERWVORzc4UWNZVGJoT21FckVqWXdSL2ZWb045bEJRaS90ZSsxcis0NzdZa01MQ2dBQkJKRUhBY0VTeVBsMHlMWUFvWS9BZ3hCaWs5ODR0QUliZncwaTJKTjNXS1F6elZqSlYrNEdramwxMmJET3FSMUpLNlpaZmxXb1F6Uk1KQXZaNmxvS0ZQbm1IeklSZTJwQ3BMMHdIMVJaZWUvRkkxdnZ6QVhiLzBVeVg1dWIvbWZjUmNaZEVSZTNXbkQzZk1NdXZCbkJFcTFhcDNtcmFxR2RGV1M3WEV2TjNCd3RaZU1ZYXc2R0w2Q2Z4dTZIQVFBQSJ9 -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[],"data":[],"options":{"columns":{"min":{},"max":[10],"total":[0]},"rows":{"min":[10],"max":[10],"total":[0]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGltKGEpXG5gYGAifQ== -->
+<pre class="r"><code>dim(a)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDAgMFxuIn0= -->
+<pre><code>[1] 0 0</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Non-unique row names are not allowed</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYSA9IGRhdGEuZnJhbWUobnVtID0gMTozLCBsb2cgPSBjKFRSVUUsIFRSVUUsIEZBTFNFKSwgY2hyID0gYygnYScsJ2InLCdjJykpXG5yb3cubmFtZXMoYSkgPSBjKDEsMSwxKVxuYGBgIn0= -->
+<pre class="r"><code>a = data.frame(num = 1:3, log = c(TRUE, TRUE, FALSE), chr = c(&#39;a&#39;,&#39;b&#39;,&#39;c&#39;))
+row.names(a) = c(1,1,1)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoibm9uLXVuaXF1ZSB2YWx1ZSB3aGVuIHNldHRpbmcgJ3Jvdy5uYW1lcyc6IOKAmDHigJnQntGI0LjQsdC60LAg0LIgYC5yb3dOYW1lc0RGPC1gKHgsIHZhbHVlID0gdmFsdWUpIDpcbiAg0L7QtNC40L3QsNC60L7QstGL0LUgJ3Jvdy5uYW1lcycg0L3QtSDRgNCw0LfRgNC10YjQtdC90YtcbiJ9 -->
+<pre><code>non-unique value when setting &#39;row.names&#39;: ‘1’Ошибка в `.rowNamesDF&lt;-`(x, value = value) :
+  одинаковые &#39;row.names&#39; не разрешены</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Data type is coerced to a common type</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudChhKVxuYGBgIn0= -->
+<pre class="r"><code>t(a)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgIFssMV0gICBbLDJdICAgWywzXSAgIFxubnVtIFwiMVwiICAgIFwiMlwiICAgIFwiM1wiICAgIFxubG9nIFwiVFJVRVwiIFwiVFJVRVwiIFwiRkFMU0VcIlxuY2hyIFwiYVwiICAgIFwiYlwiICAgIFwiY1wiICAgIFxuIn0= -->
+<pre><code>    [,1]   [,2]   [,3]   
+num &quot;1&quot;    &quot;2&quot;    &quot;3&quot;    
+log &quot;TRUE&quot; &quot;TRUE&quot; &quot;FALSE&quot;
+chr &quot;a&quot;    &quot;b&quot;    &quot;c&quot;    </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudChhWzE6Ml0pXG5gYGAifQ== -->
+<pre class="r"><code>t(a[1:2])</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgIFssMV0gWywyXSBbLDNdXG5udW0gICAgMSAgICAyICAgIDNcbmxvZyAgICAxICAgIDEgICAgMFxuIn0= -->
+<pre><code>    [,1] [,2] [,3]
+num    1    2    3
+log    1    1    0</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>data.matrix coerces to numeric:</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYXMubWF0cml4KGEpXG5gYGAifQ== -->
+<pre class="r"><code>as.matrix(a)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICBudW0gbG9nICAgICBjaHJcblsxLF0gXCIxXCIgXCJUUlVFXCIgIFwiYVwiXG5bMixdIFwiMlwiIFwiVFJVRVwiICBcImJcIlxuWzMsXSBcIjNcIiBcIkZBTFNFXCIgXCJjXCJcbiJ9 -->
+<pre><code>     num log     chr
+[1,] &quot;1&quot; &quot;TRUE&quot;  &quot;a&quot;
+[2,] &quot;2&quot; &quot;TRUE&quot;  &quot;b&quot;
+[3,] &quot;3&quot; &quot;FALSE&quot; &quot;c&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGF0YS5tYXRyaXgoYSlcbmBgYCJ9 -->
+<pre class="r"><code>data.matrix(a)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICBudW0gbG9nIGNoclxuWzEsXSAgIDEgICAxICAgMVxuWzIsXSAgIDIgICAxICAgMlxuWzMsXSAgIDMgICAwICAgM1xuIn0= -->
+<pre><code>     num log chr
+[1,]   1   1   1
+[2,]   2   1   2
+[3,]   3   0   3</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiQWR2YW5jZWQgUiIKc3VidGl0bGU6ICJDaGFwdGVyIDMiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCmBgYHtyfQpjKEZBTFNFLCBOQSkKYyhGQUxTRSwgTkFfaW50ZWdlcl8pCmMoRkFMU0UsIE5BX2NvbXBsZXhfKQpjKEZBTFNFLCBOQV9jaGFyYWN0ZXJfKQpgYGAKCmBgYHtyfQpmYWMgPSBmYWN0b3IoYygnYScsJ2InLCdjJykpCmlzLm51bWVyaWMoZmFjKQpzZXROYW1lcyhmYWMsIDE6MykKdW5uYW1lKGZhYykKYGBgCgpgYGB7cn0KYWJjID0gMTo1CmRpbShhYmMpCk5ST1coYWJjKQpOQ09MKGFiYykKYGBgCgpUaGVzZSBhcmUgcHJpbnRlZCBkaWZmZXJlbnRseToKYGBge3J9CmFycmF5KDE6NSwgYyg1LDEsMSkpCmFycmF5KDE6NSwgYygxLDUsMSkpCmFycmF5KDE6NSwgYygxLDEsNSkpCmBgYAoKQ29tbW5lbnQgaXMgbm90IHByaW50ZWQKYGBge3J9CmEgPSAxOjUKc3RydWN0dXJlKGEsIGNvbW1lbnQgPSAnd293JykKY29tbWVudChhKSA9ICd3b3cnCmNvbW1lbnQoYSkKYGBgCmBgYHtyfQpiID0gNTo5CnRhYiA9IHRhYmxlKGEsYikKc3RyKHRhYikKY2xhc3ModGFiKQp0eXBlb2YodGFiKQppcy5hcnJheSh0YWIpCmRpbSh0YWIpCmRpbW5hbWVzKHRhYikKYGBgCgpXaGVuIGxldmVscyBhcmUgcmV2ZXJzZWQsIHRoZSB2YWx1ZXMgYXJlIHJldmVyc2VkIHRvbwpgYGB7cn0KZmFjID0gZmFjdG9yKGxldHRlcnMpCmZhYwpsZXZlbHMoZmFjKSA9IHJldihsZXZlbHMoZmFjKSkKZmFjCmBgYAoKCgoKCgoKCgo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiQWR2YW5jZWQgUiIKc3VidGl0bGU6ICJDaGFwdGVyIDMiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCmBgYHtyfQpjKEZBTFNFLCBOQSkKYyhGQUxTRSwgTkFfaW50ZWdlcl8pCmMoRkFMU0UsIE5BX2NvbXBsZXhfKQpjKEZBTFNFLCBOQV9jaGFyYWN0ZXJfKQpgYGAKCmBgYHtyfQpmYWMgPSBmYWN0b3IoYygnYScsJ2InLCdjJykpCmlzLm51bWVyaWMoZmFjKQpzZXROYW1lcyhmYWMsIDE6MykKdW5uYW1lKGZhYykKYGBgCgpgYGB7cn0KYWJjID0gMTo1CmRpbShhYmMpCk5ST1coYWJjKQpOQ09MKGFiYykKYGBgCgpUaGVzZSBhcmUgcHJpbnRlZCBkaWZmZXJlbnRseToKYGBge3J9CmFycmF5KDE6NSwgYyg1LDEsMSkpCmFycmF5KDE6NSwgYygxLDUsMSkpCmFycmF5KDE6NSwgYygxLDEsNSkpCmBgYAoKQ29tbW5lbnQgaXMgbm90IHByaW50ZWQKYGBge3J9CmEgPSAxOjUKc3RydWN0dXJlKGEsIGNvbW1lbnQgPSAnd293JykKY29tbWVudChhKSA9ICd3b3cnCmNvbW1lbnQoYSkKYGBgCmBgYHtyfQpiID0gNTo5CnRhYiA9IHRhYmxlKGEsYikKc3RyKHRhYikKY2xhc3ModGFiKQp0eXBlb2YodGFiKQppcy5hcnJheSh0YWIpCmRpbSh0YWIpCmRpbW5hbWVzKHRhYikKYGBgCgpXaGVuIGxldmVscyBhcmUgY2hhbmdlZCwgdGhlIHZhbHVlcyBhcmUgY2hhbmdlZCBhcHByb3ByaWF0ZWx5CmBgYHtyfQpmYWMgPSBmYWN0b3IobGV0dGVycykKZmFjCmxldmVscyhmYWMpID0gcmV2KGxldmVscyhmYWMpKQpmYWMKCmZhYyA9IGZhY3RvcigxOjEwKQpmYWMKbGV2ZWxzKGZhYykgPSByZXYobGV2ZWxzKGZhYykpCmZhYwoKcmV2KGZhY3RvcigxOjEwKSkKZmFjdG9yKGxldHRlcnMsIGxldmVscyA9IHJldihsZXR0ZXJzKSkKYGBgCmBgYHtyfQpsbCA9IGxpc3QoJ2EnLCAxNSwgRkFMU0UpCmlzLnZlY3RvcihsbCkKYXMudmVjdG9yKGxsKQp1bmxpc3QobGwpCmBgYAoKWmVyby1zaXplZCBERgpgYGB7cn0KYSA9IGRhdGEuZnJhbWUoKQphCmRpbShhKQpgYGAKTm9uLXVuaXF1ZSByb3cgbmFtZXMgYXJlIG5vdCBhbGxvd2VkCmBgYHtyLCBlcnJvcj1UUlVFfQphID0gZGF0YS5mcmFtZShudW0gPSAxOjMsIGxvZyA9IGMoVFJVRSwgVFJVRSwgRkFMU0UpLCBjaHIgPSBjKCdhJywnYicsJ2MnKSkKcm93Lm5hbWVzKGEpID0gYygxLDEsMSkKYGBgCgpEYXRhIHR5cGUgaXMgY29lcmNlZCB0byBhIGNvbW1vbiB0eXBlCmBgYHtyfQp0KGEpCnQoYVsxOjJdKQpgYGAKCmRhdGEubWF0cml4IGNvZXJjZXMgdG8gbnVtZXJpYzoKYGBge3J9CmFzLm1hdHJpeChhKQpkYXRhLm1hdHJpeChhKQpgYGAKCgoKCgoKCgoKCgoKCgo=</div>
 
 
 
